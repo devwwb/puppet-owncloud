@@ -10,7 +10,7 @@ class owncloud::params {
         'Debian', 'Ubuntu': {
           $datadirectory = '/var/www/owncloud/data'
           $documentroot  = '/var/www/owncloud'
-          $package_name  = 'owncloud-files'
+          $package_name  = 'owncloud'
           $www_user      = 'www-data'
           $www_group     = 'www-data'
 
@@ -38,7 +38,7 @@ class owncloud::params {
           $www_group     = 'apache'
 
           if ($::operatingsystem == 'Fedora') {
-            $package_name  = 'owncloud-files'
+            $package_name  = 'owncloud'
           } else {
             $package_name  = 'owncloud'
           }

@@ -18,7 +18,7 @@ describe 'owncloud' do
           apache_group = 'www-data'
           datadirectory = '/var/www/owncloud/data'
           documentroot = '/var/www/owncloud'
-          package_name = 'owncloud-files'
+          package_name = 'owncloud'
 
           case facts[:operatingsystem]
           when 'Debian'
@@ -42,7 +42,7 @@ describe 'owncloud' do
 
           case facts[:operatingsystem]
           when 'Fedora'
-            package_name = 'owncloud-files'
+            package_name = 'owncloud'
             if (Versionomy.parse(facts[:operatingsystemrelease]) > Versionomy.parse('18')) || (Versionomy.parse(facts[:operatingsystemrelease]) == Versionomy.parse('18'))
               apache_version = '2.4'
             else
@@ -442,7 +442,7 @@ describe 'owncloud' do
 
   context 'unsupported operating system' do
     describe 'owncloud class without any parameters on Solaris/Nexenta' do
-      package_name = 'owncloud-files'
+      package_name = 'owncloud'
       let(:facts) do
         {
           osfamily: 'Solaris',
